@@ -13,6 +13,8 @@ MoodForMusic is an intelligent mood detection and music recommendation applicati
 - `notebooks/`: Jupyter notebooks for feature extraction, mood classification, music recommendation, and validation.
 - `models/`: Saved machine learning models.
 - `visuals/`: Contains data visualizations.
+- `docs/`: Contains the detailed project documentation
+- `demo/`: Contains video demo of Web UI.
 
 ## Setup and Installation
 
