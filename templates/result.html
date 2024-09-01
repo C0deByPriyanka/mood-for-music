@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-6 text-center">Prediction Result</h1>
+        <div class="mb-4">
+            <h2 class="text-xl font-semibold">Predicted Mood:</h2>
+            <p class="text-lg text-gray-700">{{ mood }}</p>
+        </div>
+        <div>
+            <h2 class="text-xl font-semibold mb-2">Recommended Songs:</h2>
+            <ul class="list-disc pl-5">
+                {% for rec in recommendations %}
+                <li class="mb-2">
+                    <strong>Title:</strong> {{ rec.name }}<br>
+                    <strong>Artist:</strong> {{ rec.artist }}<br>
+                    <strong>Album:</strong> {{ rec.album }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="mt-4 text-center">
+            <a href="/" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700">Upload Another Image</a>
+        </div>
+    </div>
+</body>
+</html>

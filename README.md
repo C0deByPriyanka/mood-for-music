@@ -6,13 +6,13 @@ MoodForMusic is an intelligent mood detection and music recommendation applicati
 
 ## Project Structure
 
+- `app.py`: Flask app for mood based music recommendation.
+- `requirements.txt/`: Dependencies for python.
+- `templates/`: HTML files for flask app.
 - `data/`: Contains raw and processed datasets.
 - `notebooks/`: Jupyter notebooks for feature extraction, mood classification, music recommendation, and validation.
 - `models/`: Saved machine learning models.
 - `visuals/`: Contains data visualizations.
-- `docs/`: Project documentation.
-- `deploy/`: Deployment scripts and `requirements.txt`.
-- `scripts/`: Python scripts for music recommendation.
 
 ## Setup and Installation
 
@@ -20,5 +20,10 @@ MoodForMusic is an intelligent mood detection and music recommendation applicati
 2. Navigate to the project directory.
 3. Install the dependencies using:
    ```bash
-   pip install -r deploy/requirements.txt
+   pip install -r requirements.txt
    ```
+4. Start Flask app using:
+   ```bash
+   python app.py
+   ```
+5. Access the app in browser at localhost:5000

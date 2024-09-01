@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood for Music</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #preview {
+            display: none;
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-6 text-center">Mood Based Music Recommender</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="file">
+                    Choose an image to detect mood
+                </label>
+                <input type="file" name="file" id="file" class="border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700" accept="image/*" onchange="previewImage()">
+            </div>
+            <img id="preview" src="" alt="Image Preview">
+            <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 mt-4">Recommend Music</button>
+        </form>
+    </div>
+
+    <script>
+        function previewImage() {
+            const fileInput = document.getElementById('file');
+            const preview = document.getElementById('preview');
+            const file = fileInput.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '';
+            }
+        }
+    </script>
+</body>
+</html>
