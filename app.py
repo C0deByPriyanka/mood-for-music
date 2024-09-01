@@ -85,4 +85,4 @@ def predict():
         return render_template('result.html', mood=predicted_mood, recommendations=recommendations_list)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
